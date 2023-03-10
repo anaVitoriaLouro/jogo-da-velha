@@ -187,7 +187,7 @@ function checkWinCondition() {
             declareWinner("x");
         } else if(b2Child == 'o' && b5Child == 'o' && b7Child == 'o') {
             //o
-            declareWinner("ogit ")
+            declareWinner("o")
         }
     }
 
@@ -222,8 +222,23 @@ function declareWinner(winner) {
         msg = "Deu velha!";
     }
 
-
     //exibe msg
     messageText.innerHTML = msg;
     messageContainer.classList.remove("hide");
+
+    //esconde msg
+    setTimeout(function() {
+        messageContainer.classList.add("hide");
+    }, 3000);
+
+    // zera as jogadas
+    player1 = 0;
+    player2 = 0;
+
+    // remove x e o
+    let boxesToRemove = document.querySelectorAll(".box div");
+
+    for(let i = 0; i < boxesToRemove.length; i++){
+        boxToRemove[i].parentNode.removeChild(boxToRemove[i]);
+    }
 }
