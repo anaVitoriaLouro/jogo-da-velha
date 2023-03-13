@@ -31,8 +31,10 @@ for (let i = 0; i < boxes.length; i++) {
                 player1++;
 
                 if (secondPlayer == "ai-player") {
+                    
                     // função executar a jogar
                     computerPlay();
+
                     player2++;
                 }
 
@@ -49,7 +51,7 @@ for (let i = 0; i < boxes.length; i++) {
 // evento de click 2 players ou IA
 for (let i = 0; i < buttons.length; i++) {
 
-    buttons[i].addEventListener("click", function () {
+    buttons[i].addEventListener("click", function() {
 
         secondPlayer = this.getAttribute("id");
 
@@ -57,7 +59,7 @@ for (let i = 0; i < buttons.length; i++) {
             buttons[j].style.display = "none";
         }
 
-        setTimeout(function () {
+        setTimeout(function() {
 
             let container = document.querySelector("#container");
             container.classList.remove("hide");
@@ -76,7 +78,7 @@ function checkEl(player1, player2) {
         el = o
     }
 
-    return el
+    return el;
 }
 
 // ve quem ganhou
@@ -211,9 +213,9 @@ function checkWinCondition() {
         if (b3Child == 'x' && b5Child == 'x' && b7Child == x) {
             //x
             declareWinner("x");
-        } else if (b2Child == 'o' && b5Child == 'o' && b7Child == 'o') {
+        } else if (b3Child == 'o' && b5Child == 'o' && b7Child == 'o') {
             //o
-            declareWinner("o")
+            declareWinner("o");
         }
     }
 
@@ -227,7 +229,7 @@ function checkWinCondition() {
     }
 
     if (counter == 9) {
-        declareWinner('deu velha')
+        declareWinner('deu velha');
     }
 }
 
@@ -238,7 +240,7 @@ function declareWinner(winner) {
     let scoreboardY = document.querySelector("#scoreboard-2");
     let msg = "";
 
-    if (winner == "x") {
+    if (winner = "x") {
         scoreboardX.textContent = parseInt(scoreboardX.textContent) + 1;
         msg = "O jogador 1 venceu!";
     } else if (winner = "o") {
