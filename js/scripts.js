@@ -222,14 +222,14 @@ function checkWinCondition() {
     // empate
     let counter = 0;
 
-    for (let i = 0; i < boxes.length; i++) {
+    for(let i = 0; i < boxes.length; i++) {
         if (boxes[i].childNodes[0] != undefined) {
             counter++;
         }
     }
 
     if (counter == 9) {
-        declareWinner('deu velha');
+        declareWinner("deu velha");
     }
 }
 
@@ -240,10 +240,10 @@ function declareWinner(winner) {
     let scoreboardY = document.querySelector("#scoreboard-2");
     let msg = "";
 
-    if (winner = "x") {
+    if (winner == "x") {
         scoreboardX.textContent = parseInt(scoreboardX.textContent) + 1;
         msg = "O jogador 1 venceu!";
-    } else if (winner = "o") {
+    } else if (winner == "o") {
         scoreboardY.textContent = parseInt(scoreboardY.textContent) + 1;
         msg = "O jogador 2 venceu!";
     } else {
