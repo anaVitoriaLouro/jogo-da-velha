@@ -255,7 +255,7 @@ function declareWinner(winner) {
     messageContainer.classList.remove("hide");
 
     //esconde msg
-    setTimeout(function () {
+    setTimeout(function() {
         messageContainer.classList.add("hide");
     }, 3000);
 
@@ -266,7 +266,7 @@ function declareWinner(winner) {
     // remove x e o
     let boxesToRemove = document.querySelectorAll(".box div");
 
-    for (let i = 0; i < boxesToRemove.length; i++) {
+    for(let i = 0; i < boxesToRemove.length; i++) {
         boxesToRemove[i].parentNode.removeChild(boxesToRemove[i]);
     }
 }
@@ -278,13 +278,13 @@ function computerPlay() {
     counter = 0;
     filled = 0;
 
-    for (let i = 0; i < boxes.length; i++) {
+    for(let i = 0; i < boxes.length; i++) {
 
         let randomNumber = Math.floor(Math.random() * 5);
 
         // só preenche se estiver vazio
-        if (boxes[i].childNodes[0] == undefined) {
-            if (randomNumber <= 1) {
+        if(boxes[i].childNodes[0] == undefined) {
+            if(randomNumber <= 1) {
                 boxes[i].appendChild(cloneO);
                 counter++;
                 break;
